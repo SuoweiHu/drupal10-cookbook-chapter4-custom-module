@@ -1,0 +1,15 @@
+<?php
+
+/** * Implements hook_page_top().
+*/ function mymodule_page_top() { 
+    \Drupal::messenger()->addStatus  ('hook_page_top: Hello world!');
+    \Drupal::messenger()->addWarning ('hook_page_top: Simon !');
+    \Drupal::messenger()->addError   ('hook_page_top: Good Bye!');
+}
+
+/** * Implements hook_page_bottom().
+*/ function mymodule_page_bottom() { 
+    \Drupal::messenger()->addStatus  ('hook_page_bottom: Hello world!');
+    \Drupal::messenger()->addWarning ('hook_page_bottom: Simon !');
+    \Drupal::messenger()->addError   ('hook_page_bottom: Good Bye!');
+}
