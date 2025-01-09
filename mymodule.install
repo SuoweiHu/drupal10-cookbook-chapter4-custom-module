@@ -24,3 +24,18 @@ function mymodule_uninstall()
         ->getEditable('contact.form.contactus')
         ->delete();
 }
+
+
+
+/**
+ * implment the schema update hooks
+ * (Note that the schema hoks are always run first in a tailing _N order,
+ *  only after all schema hook finish running then, will the post_update hook run)
+ */ 
+function mymodule_update_103002(&$sandbox){
+    \Drupal::logger('logger')->notice("Hello WORLD from mymodule_update_1 (check log at /admin/reports/dblog) ");
+}
+function mymodule_update_104003(&$sandbox){
+    \Drupal::logger('logger')->notice("Hello WORLD from mymodule_update_2 (check log at /admin/reports/dblog) ");
+}
+
