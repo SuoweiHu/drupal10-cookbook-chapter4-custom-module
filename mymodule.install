@@ -1,0 +1,26 @@
+<?php
+
+
+/**
+* Implements hook_install() 
+* of which will be excuted during the installation process 
+*/
+
+function mymodule_install() {
+    // set the wesbtie name 
+    \Drupal::configFactory()
+        ->getEditable('system.site')
+        ->set('name', "Drupal Development Cookbook Chapter4")
+        ->save();
+}
+
+/**
+* Implements hook_uninstall() 
+* of which will be excuted during the un-installation process 
+*/
+function mymodule_uninstall()
+{
+    \Drupal::configFactory()
+        ->getEditable('contact.form.contactus')
+        ->delete();
+}
